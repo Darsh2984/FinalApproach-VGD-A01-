@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnergyDrinkPickup
   player: {fileID: 1705999946}
-  playerStamina: {fileID: 0}
+  playerStamina: {fileID: 2079664316}
   energyDrinkModel: {fileID: 521362416}
   interactionPrompt: {fileID: 276157646}
   promptText: {fileID: 2081720480}
