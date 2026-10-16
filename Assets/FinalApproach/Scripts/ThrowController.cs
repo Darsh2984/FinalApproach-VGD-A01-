@@ -22,6 +22,12 @@ public class ThrowController : MonoBehaviour
     private Collider landingFieldCollider;
 
 
+    [Header("Preparation Timer")]
+    [SerializeField]
+    private PreparationTimer preparationTimer;
+
+
+
     // ====================================
     // THROW SETTINGS
     // ====================================
@@ -99,10 +105,19 @@ public class ThrowController : MonoBehaviour
 
     private void Update()
     {
+
         if (hasThrown)
         {
             return;
         }
+
+        if (preparationTimer != null &&
+            !preparationTimer.HasTimeRemaining)
+        {
+            isPreparing = false;
+            return;
+        }
+
 
         HandlePreparation();
 
@@ -185,6 +200,9 @@ public class ThrowController : MonoBehaviour
     private void ThrowJavelin()
     {
         hasThrown = true;
+
+        if (preparationTimer != null)
+            preparationTimer.StopTimer();
 
         isPreparing = false;
 
@@ -418,6 +436,11 @@ public class ThrowController : MonoBehaviour
         throwAngle = 35f;
 
         releaseQualityLabel = "";
+
+        if (preparationTimer != null)
+            preparationTimer.ResetTimer();
+
+
     }
 
 
