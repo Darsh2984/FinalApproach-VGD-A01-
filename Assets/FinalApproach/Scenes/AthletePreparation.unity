@@ -3040,7 +3040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProximityLight
   player: {fileID: 1705999946}
   targetLight: {fileID: 1255684966}
-  activationDistance: 10
+  activationDistance: 70
 --- !u!1 &1918828094
 GameObject:
   m_ObjectHideFlags: 0
